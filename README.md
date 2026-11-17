@@ -32,7 +32,7 @@ Notas: pesos são normalizados para somar 1; valores devem ser ≥ 0 (zero na fo
 ```bash
 # backend
 cd backend
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 uvicorn main:app --reload          # http://localhost:8000
 
 # frontend (outro terminal)
@@ -50,4 +50,4 @@ cd frontend && npm test            # parsing de CSV
 
 ## Deploy
 
-O `Dockerfile` gera o frontend e o serve pelo próprio FastAPI (uma única porta, usa `$PORT`). Em Render/Railway/Fly.io: novo serviço web a partir deste repositório, runtime Docker.
+Na Vercel: `vercel.json` define dois serviços (backend FastAPI em `/api`, frontend Vite em `/`). Alternativa com Docker: o `Dockerfile` gera o frontend e o serve pelo próprio FastAPI (uma única porta, usa `$PORT`). Em Render/Railway/Fly.io: novo serviço web a partir deste repositório, runtime Docker.

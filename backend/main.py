@@ -64,6 +64,7 @@ def solve(p: Problem):
 
 
 @app.post("/api/solve")
+@app.post("/solve")  # Vercel pode entregar o caminho sem o prefixo /api
 def api_solve(p: Problem):
     return solve(p)
 
